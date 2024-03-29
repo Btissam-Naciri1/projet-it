@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title>Affectation des employés</title>
+
+</head>
+<body>
+<h1>Affectation des employés au projet</h1>
+<form action="#" method="post">
+    <div>
+        <label for="employee_name">Nom de l'employé :</label>
+        <input type="text" id="employee_name" name="employee_name" list="employee_names"></input>
+        <datalist id="employee_names">
+            <option value="John ">
+            <option value="ahmed">
+        </datalist>
+    </div>
+    <div>
+        <label for="project_name">Nom du projet :</label>
+        <input type="text" id="project_name" name="project_name" list="project_names">
+        <datalist id="project_names">
+            <option value="stell"></option>
+            <option value="Adidas"></option>
+        </datalist>
+    </div>
+    <div>
+        <label for="implication">Implication :</label>
+        <select id="implication" name="implication">
+            <option value="20%">20%</option>
+            <option value="50%">50%</option>
+            <option value="30%">30%</option>
+        </select>
+    </div>
+    <button type="submit">Soumettre</button>
+</form>
+</body>
+</html>

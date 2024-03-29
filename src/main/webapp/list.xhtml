@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://java.sun.com/jsf/composite">
+<h:head>
+    <title>Employee List</title>
+</h:head>
+<h:body>
+    <h1>Employe List</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Skills</th>
+            <th>Project</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <ui:repeat value="#{employeeBean.employeeList}" var="employee">
+            <tr>
+                <td>#{employee.id}</td>
+                <td>#{employee.name}</td>
+                <td>#{employee.email}</td>
+                <td>
+                    <ui:repeat value="#{employee.skills}" var="skill">
+                        #{skill}<br/>
+                    </ui:repeat>
+                </td>
+                <td>#{employee.project}</td>
+                <td>
+                    <h:form>
+                        <h:commandButton value="Remove" action="#{employeeBean.removeEmployee(employee.id)}"/>
+                    </h:form>
+                </td>
+            </tr>
+        </ui:repeat>
+        </tbody>
+    </table>
+</h:body>
+</html>
